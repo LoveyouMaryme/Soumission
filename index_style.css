@@ -66,11 +66,13 @@ section {
 #hero-section img {
     max-width: 100%;
     height: auto;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 
 }
 
 #hero-img {
     margin-left: 50px;
+
 }
 
 #hero-description {
@@ -176,8 +178,11 @@ img+div {
 /* Video Examplaire */
 
 #video-section {
-    background-color: #FFE7E6;
+    background-color: white;
     justify-content: space-evenly;
+    border-image: url(ressources/images/heart-border.jpg) 30 round;
+    border-width: 5px;
+    border-style: solid;
 
 }
 
@@ -193,13 +198,9 @@ img+div {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    border-image: url(ressources/images/heart-border.jpg) 30 round;
-    border-width: 10px;
-    border-style: solid;
     margin: 50px 0px;
 
 }
-
 
 
 video {
@@ -212,5 +213,46 @@ video {
 
 p+button {
     margin-top: 40px;
+    border: none;
+    padding:  20px 40px;
+    border-radius: 20px;
+    background-color: #D88989;
+    color: white;
+    transition-duration: 0.5s;
+    cursor: pointer;
 
 }
+
+p + button:hover {
+    background-color: white;
+    color: #D88989;
+    box-shadow: 0 0 10px #D88989;
+}
+
+#contact-section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#yellow-border{
+    width: 70%;
+    height: 70%;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #f0eab1;
+      position: relative;
+     z-index: 1;
+    
+    
+}
+
+#throphee-img{
+    position: absolute;
+    z-index: 2;  /* put in front of the border */
+    
+}
+
+#contact-wrapper{
+    position: relative; }
