@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-.body{
-    font-family: "Shantell-Sans", cursive;
+body{
+    font-family: "Shantell Sans", cursive;
 }
 
 .border-header {
@@ -20,7 +20,7 @@
     background-color:#FFFFFF;
     justify-content: space-between;
     width: 100%;
-    height: 5%;
+    height: 7%;
 }
 
 div.border-header > div, div.border-soumission > div{
@@ -37,11 +37,117 @@ div.border-header > div:hover{
 
 #boutton-soumission{
     border-radius: 20px;
-    background-color: blue;
-    margin: 5px 25px 5px 0px;
+    background-color: #FFFDE6;
+    margin: 10px 25px 10px 0px;
     padding: 5px 20px 5px 20px;
     width: auto;
+}
+
+#boutton-soumission:hover{
+    cursor: pointer;
+}
+
+.hero-section {
+    display: flex;
+    background-color: #FFE7E6;
+    width: 100%;
+    height: 80%;
+
+}
 
 
+#hero-section img{
+    max-width: 100%;
+    height: auto;
+    
+}
+
+#hero-img{
+    margin-left: 50px;
+}
+
+#hero-description{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+#hero-description > div + div{ /*this was genius */
+    margin-top: 20px
+}
+
+#hero-title{
+    font-size: 36px;
+    margin-top: 70px;
+    font-weight: 700;
+    width: 100%;
+}
+
+#hero-sous_description{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#bundle-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#info-bundle{
+    
+    background-color: #FFFDE6;
+    border-radius: 10px;
+    padding: 5px 10px;
+
+}
+
+.select-bundle{
+    display:flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+
+}
+
+.select-bundle .card-bundle{
+    background-color: #FFFFFF;
+    width: 200px;
+    height: 100%;
+    border-radius: 20px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+
+img + div{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.img-bundle{
+    border-radius: 20px;
+}
+
+.bundle-description{
+    display:flex;
+    justify-content: space-between;
+}
+
+.bundle-description img{
+    transition-duration: 3x;
+ 
+}
+
+.select-bundle .card-bundle:hover{
+    transform: scale(1.1);
+}
+
+.card-bundle .img-bundle{
+    width: auto;
+    height: 117px
 }
 
