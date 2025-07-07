@@ -1,0 +1,127 @@
+/* ===== Root Variables ===== */
+:root {
+    --main-bg: #FFE7E6;
+    --accent-bg: #FFFDE6;
+    --border-color: #e4c58b;
+    --form-color: white;
+    --highlight: #D88989;
+    --card-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    --video-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    --hero-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    --border-radius: 20px;
+    --text-dark: #5c2b29;
+    --bg-gradient: linear-gradient(135deg, #FFFDE6 0%, #FFE7E6 100%);
+}
+
+
+
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Shantell Sans", cursive;
+    color: var(--text-dark);
+    background: var(--bg-gradient);
+}
+
+
+
+
+
+
+
+/* ===== Form ===== */
+
+.reculer{
+    width: auto;
+    height: 10%;
+    cursor: pointer;
+}
+
+.reculer:hover{
+    content: url(ressources/icons/arrow-left-white.png);
+    width: auto;
+    height: 10%;
+
+}
+.form-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+}
+
+.form {
+    width: 50%;
+    height: 80%;
+    background-color: var(--form-color);
+    border-radius: 30px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position:relative;
+    padding: 30px 40px;
+}
+
+
+
+.question {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.all-reclamations{
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 20px;
+    color: var(--text-dark);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 12px 50px 12px 20px;
+    border: 1px solid var(--text-dark);
+    background-color: var(--form-color);
+    width: 100%;
+    cursor: pointer;
+
+}
+
+/* ===== okay button ===== */
+
+.ok-button {
+     position: absolute;
+  right: -150px; /* Ajuste pour qu’il sorte du formulaire */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ok-button img {
+  width: 100px;
+  transition: transform 0.2s ease;
+}
+
+.ok-button:hover img {
+  transform: scale(1.05);
+}
+
+

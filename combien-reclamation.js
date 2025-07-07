@@ -4,11 +4,13 @@ function selectOption(event) {
 
     let writtenValue = this.value;
     let nbReclamationIsValid = isNbReclamationValid(writtenValue);
+    localStorage.setItem("nbReclamation", writtenValue);
+   
 
     if (event.key === "Enter") {
 
         if (nbReclamationIsValid) {
-            gi
+          
             window.location.href = "demande-montant.html";
         }
         else {
