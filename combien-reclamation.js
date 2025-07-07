@@ -8,6 +8,7 @@ function selectOption(event) {
     if (event.key === "Enter") {
 
         if (nbReclamationIsValid) {
+            gi
             window.location.href = "demande-montant.html";
         }
         else {
