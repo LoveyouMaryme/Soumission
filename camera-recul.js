@@ -6,8 +6,18 @@ listOfChoices.forEach(function (choice) {
 
 function selectOption() {
   const selectedValue = this.value;
+  var cameraIsValid = isCameraValid(selectedValue);
 
-  if (selectedValue) {
+  if (selectedValue && cameraIsValid) {
     window.location.href = "reclamation.html";
+  }
+}
+
+function isCameraValid(value) {
+
+  if (value == "OUI") {
+    return true
+  } else {
+    return false
   }
 }
