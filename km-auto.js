@@ -3,6 +3,8 @@ document.getElementById("km-auto-selection").addEventListener("keydown", selectO
 function selectOption(event) {
 
     writtenValue = this.value;
+    localStorage.setItem("kmAnnuel", writtenValue)
+
     kmIsValid = isKmValid(writtenValue)
 
     if (event.key === "Enter") {

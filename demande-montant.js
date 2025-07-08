@@ -70,6 +70,7 @@ function sumReclamation() {
   });
 
   console.log("Total:", currentSum);
+  localStorage.setItem("montantReclamation", currentSum)
   redirectionAfterSum()
   
 }

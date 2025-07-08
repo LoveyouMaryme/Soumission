@@ -5,6 +5,7 @@ document.getElementById("valeur-auto-selection").addEventListener("keydown", sel
 function selectOption(event) {
 
     let writtenValue = this.value;
+    localStorage.setItem("valeur-auto", writtenValue)
     let valueCarIsValid = isValueCarValid(writtenValue)
 
 

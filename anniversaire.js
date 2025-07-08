@@ -6,6 +6,7 @@ const gender = localStorage.getItem("gender");
 
 function selectOption() {
     const selectedValue = this.value;
+    localStorage.setItem("anniversaire", selectedValue)
     let ageIsValid = isAgeValid(selectedValue)
     let femaleIsValid = isFemaleValid(selectedValue)
     let maleAgenderIsValid = isMaleAgenderValid(selectedValue)
