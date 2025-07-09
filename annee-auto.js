@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const ageCarIsValid = isAgeCarValid(parseInt(selectedValue));
         
         if (ageCarIsValid) {
-            window.location.href = "camera-recul.html";
+            window.location.href = "km-auto.html";
         } else {
             window.location.href = "refus-client.html";
         }

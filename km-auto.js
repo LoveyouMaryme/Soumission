@@ -1,31 +1,57 @@
-document.getElementById("km-auto-selection").addEventListener("keydown", selectOption);
+const kmAutoInput = document.getElementById("km-auto-selection");
+const boutonAvancer = document.getElementById("bouton-avancer");
 
-function selectOption(event) {
-
-    writtenValue = this.value;
-    localStorage.setItem("kmAnnuel", writtenValue)
-
-    kmIsValid = isKmValid(writtenValue)
-
-    if (event.key === "Enter") {
-
-
-        if (kmIsValid) {
-            window.location.href = "camera-recul.html";
-        }
-        else {
-            window.location.href = "refus-client.html"
-        }
-
+function isValueEntered(value) {
+    const trimmedValue = String(value).trim();
+    if (trimmedValue === "") {
+        return false;
     }
+    return !isNaN(parseFloat(trimmedValue));
 }
 
+function isKmValidFinal(value) {
+    const numValue = parseFloat(value);
+    return !isNaN(numValue) && numValue >= 0 && numValue < 50000;
+}
 
-function isKmValid(value) {
+function handleInputAndButtonState() {
+    let writtenValue = kmAutoInput.value;
+    
+    localStorage.setItem("kmAnnuel", writtenValue);
 
-    if (value < 50000) {
-        return true
+    if (isValueEntered(writtenValue)) {
+        boutonAvancer.style.display = 'block';
     } else {
-        return false
+        boutonAvancer.style.display = 'none';
     }
 }
+
+
+kmAutoInput.addEventListener("input", handleInputAndButtonState);
+
+boutonAvancer.addEventListener("click", function(event) {
+    event.preventDefault(); 
+    
+    let writtenValue = kmAutoInput.value;
+    
+    if (isKmValidFinal(writtenValue)) {
+        window.location.href = this.href;
+    } else {
+        window.location.href = "refus-client.html";
+    }
+});
+
+kmAutoInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        let writtenValue = this.value;
+        localStorage.setItem("kmAnnuel", writtenValue);
+        
+        if (isKmValidFinal(writtenValue)) {
+            window.location.href = "camera-recul.html";
+        } else {
+            window.location.href = "refus-client.html";
+        }
+    }
+});
+
+handleInputAndButtonState();

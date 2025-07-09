@@ -45,6 +45,26 @@ body {
     height: 10%;
 
 }
+
+#bouton-avancer {
+    display: none;
+}
+
+.avancer {
+    width: auto;
+    height: 10%;
+    position: absolute;
+    left: 80%;
+    top: 45%;
+    cursor: pointer;
+}
+
+.avancer:hover {
+    content: url(ressources/icons/arrow-right-white.png);
+    width: auto;
+    height: 10%;
+}
+
 .form-container {
     display: flex;
     width: 100%;
