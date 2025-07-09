@@ -13,12 +13,11 @@
     --bg-gradient: linear-gradient(135deg, #FFFDE6 0%, #FFE7E6 100%);
 }
 
-
-
 /* ===== Reset & Base Styles ===== */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Recommandé: pour mieux gérer les padding et border */
 }
 
 body {
@@ -27,14 +26,13 @@ body {
     background: var(--bg-gradient);
 }
 
-
 /* ===== Form ===== */
 
 .reculer{
     width: auto;
     height: 10%;
     position: absolute;
-    left: 20%;   
+    left: 20%;    
     top: 45%;
     cursor: pointer;
 }
@@ -43,21 +41,21 @@ body {
     content: url(ressources/icons/arrow-left-white.png);
     width: auto;
     height: 10%;
-
 }
+
 .form-container {
     display: flex;
     width: 100%;
-    height: 100%;
+    /* Utiliser 100vh pour s'assurer que le centrage vertical fonctionne sur toute la hauteur de la vue */
+    height: 100vh;
     align-items: center;
     justify-content: center;
     position: relative;
-
 }
 
 .form {
     width: 50%;
-    height: 40%;
+    height: 40%; /* Garder si vous voulez une hauteur fixe, sinon enlevez et laissez le contenu dicter la hauteur */
     background-color: var(--form-color);
     border-radius: 30px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05);
@@ -68,33 +66,41 @@ body {
     gap: 40px;
     margin-left: 100px;
     position: relative;
+    padding: 20px; /* Ajout d'un padding pour un meilleur espacement interne */
 }
-
-
 
 .question {
     font-size: 40px;
     font-weight: 600;
+    text-align: center; /* Centre le texte de la question */
 }
 
-
-#valeur-auto-selection{
+/* --- Styles pour le SELECT (#annee-auto-selection) --- */
+#annee-auto-selection {
     font-size: 30px;
     font-weight: 300;
-    text-align: center;
+    text-align: center; /* Centre le texte sélectionné dans le dropdown */
     border-radius: 20px;
     color: var(--text-dark);
+    /* `appearance: none;` et `...-appearance: none;` sont importants pour styliser le SELECT */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    padding: 12px 50px 12px 20px;
+    padding: 12px 20px; /* Padding interne pour le select */
     border: 1px solid var(--text-dark);
     background-color: var(--form-color);
-    width: 100%;
+    width: 100%; /* Le select prendra 100% de la largeur de son parent (.selection-container) */
     cursor: pointer;
-
+    /* Ajout d'une icône de flèche personnalisée pour remplacer la flèche par défaut du navigateur */
+    background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235c2b29"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Positionne la flèche à droite */
+    background-size: 24px; /* Taille de la flèche */
 }
 
-
-
-
+/* Styles pour le conteneur du select si nécessaire, mais moins pertinent avec un select seul */
+.selection-container {
+    width: 100%; /* S'assure que le conteneur prend la largeur complète */
+    max-width: 300px; /* Optionnel: limite la largeur maximale pour le select */
+    position: relative; /* Nécessaire si vous voulez positionner des éléments à l'intérieur */
+}

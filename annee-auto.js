@@ -1,31 +1,42 @@
-document.getElementById("valeur-auto-selection").addEventListener("keydown", selectOption);
+document.addEventListener('DOMContentLoaded', function() {
+    const anneeAutoSelect = document.getElementById("annee-auto-selection");
+    let today = new Date();
 
-let today = new Date();
+    //Génére dynamiquement les options d'année
+    function generateYears() {
+        const currentYear = today.getFullYear();
+        const startYear = 1900;
+        const endYear = currentYear + 1;
 
-function selectOption(event) {
+        for (let year = endYear; year >= startYear; year--) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            anneeAutoSelect.appendChild(option);
+        }
+    }
 
-    var selectedValue = this.value
-    var ageCarIsValid = isAgeCarValid(selectedValue)
+    generateYears();
 
-    if (event.key === "Enter") {
+    anneeAutoSelect.addEventListener("change", function() {
+        const selectedValue = this.value;
 
+        const ageCarIsValid = isAgeCarValid(parseInt(selectedValue));
+        
         if (ageCarIsValid) {
             window.location.href = "camera-recul.html";
+        } else {
+            window.location.href = "refus-client.html";
         }
-        else {
-            window.location.href = "refus-client.html"
-        }
+    });
 
+        function isAgeCarValid(selectedYear) {
+        // Crée une date pour le 1er janvier de l'année sélectionnée
+        const selectedDate = new Date(selectedYear, 0, 1); 
+        
+        const twentyfiveYearsLater = new Date(selectedDate);
+        twentyfiveYearsLater.setFullYear(twentyfiveYearsLater.getFullYear() + 25);
+
+        return today < twentyfiveYearsLater;
     }
-}
-
-function isAgeCarValid(value) {
-    const twentyfiveYearsLater = new Date(value);
-    twentyfiveYearsLater.setFullYear(twentyfiveYearsLater.getFullYear() + 25);
-
-    if (today < twentyfiveYearsLater) {
-        return true
-    } else {
-        return false
-    }
-}
+});
