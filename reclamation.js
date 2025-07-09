@@ -11,6 +11,8 @@ function selectOption() {
   if (selectedValue === "OUI") {
     window.location.href = "combien-reclamation.html";
   }else{
-    window.location.href = "fin.html"
+    localStorage.setItem("nbReclamation", 0);
+    localStorage.setItem("montantReclamation", 0);
+    window.location.href = "calcul-montant-reclamation.html"
   }
 }
