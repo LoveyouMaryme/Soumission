@@ -23,13 +23,16 @@ function setGrpMontantBase(){
     
     montantDeBase = 0;
 
-    if(gender === "Homme" || gender === "Autre" && ageIsLessTwentyFive){
+    if((gender === "Homme" || gender === "Autre")  && ageIsLessTwentyFive){
+        console.log(" Categorie : Homme ou Autre et moins de 25 ans")
         return montantDeBase = priceCar * 5 / 100
 
     } else if(ageIsMoreSeventyFive){
+        console.log("Categorie : Plus de 75 ans")
         return montantDeBase = priceCar * 4 / 100
 
     }else{
+        console.log("Categorie : Plus de 25 ans")
         return montantDeBase = priceCar * 1.5 / 100
     }
 }
@@ -38,10 +41,15 @@ function isAgeLessTwentyFive(value) {
     const twentyFiveYearsLater = new Date(value);
     twentyFiveYearsLater.setFullYear(twentyFiveYearsLater.getFullYear() + 25);
 
+    console.log(today)
+    console.log(twentyFiveYearsLater)
+
 
     if (today < twentyFiveYearsLater) {
+        console.log("Age is less than 25")
         return true
     } else {
+        console.log("Age is more than 25")
         return false
     }
 }
@@ -69,15 +77,25 @@ function isPenaltySet(value){
 function calculerPrixAssuranceAnnuel(montant){
 
     let penaltyIsSet = isPenaltySet(montantReclamation)
+    
+    let prixReclamation = 350 * nbReclamation
+    let prixKmAnnuel = 0.02 * kmAnnuel
 
     let montantAssuranceAnnuelle = 
         montantDeBase * 
-        (350 * nbReclamation) +
-        (0.02 * kmAnnuel ) 
+        (prixReclamation) +
+        (prixKmAnnuel) 
 
     if(penaltyIsSet){
         montantAssuranceAnnuelle += 700
     }
+
+    console.log("Montant de base: " + montantDeBase)
+    console.log("Prix de la reclamation: " + prixReclamation)  
+    console.log("Prix du km annuel: " + prixKmAnnuel)
+    console.log(penaltyIsSet ? "Pénalité appliquée" : "Aucune pénalité appliquée")
+    console.log("Montant de l'assurance annuelle: " + montantAssuranceAnnuelle)
+
 
     return montantAssuranceAnnuelle
 
