@@ -17,7 +17,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Add this for easier padding/border management */
+    box-sizing: border-box;
 }
 
 body {
@@ -39,6 +39,25 @@ body {
 
 .reculer:hover{
     content: url(ressources/icons/arrow-left-white.png);
+    width: auto;
+    height: 10%;
+}
+
+#bouton-avancer {
+    display: none;
+}
+
+.avancer {
+    width: auto;
+    height: 10%;
+    position: absolute;
+    left: 80%;
+    top: 45%;
+    cursor: pointer;
+}
+
+.avancer:hover {
+    content: url(ressources/icons/arrow-right-white.png);
     width: auto;
     height: 10%;
 }

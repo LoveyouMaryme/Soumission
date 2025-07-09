@@ -1,32 +1,57 @@
-document.getElementById("combien-reclamation-selection").addEventListener("keydown", selectOption);
+const reclamationInput = document.getElementById("combien-reclamation-selection");
+const boutonAvancer = document.getElementById("bouton-avancer");
 
-function selectOption(event) {
+function isValueEntered(value) {
+    const trimmedValue = String(value).trim();
+    if (trimmedValue === "") {
+        return false;
+    }
+    return !isNaN(parseFloat(trimmedValue));
+}
 
-    let writtenValue = this.value;
-    let nbReclamationIsValid = isNbReclamationValid(writtenValue);
+function isNbReclamationValidFinal(value) {
+    const numValue = parseFloat(value);
+    return !isNaN(numValue) && numValue >= 0 && numValue < 4;
+}
+
+function handleInputAndButtonState() {
+    let writtenValue = reclamationInput.value;
+    
     localStorage.setItem("nbReclamation", writtenValue);
-   
 
-    if (event.key === "Enter") {
-
-        if (nbReclamationIsValid) {
-          
-            window.location.href = "demande-montant.html";
-        }
-        else {
-            window.location.href = "refus-client.html"
-        }
-
-    }
-}
-
-
-function isNbReclamationValid(value) {
-
-    if (value < 4) {
-        return true
+    if (isValueEntered(writtenValue)) {
+        boutonAvancer.style.display = 'block';
     } else {
-        return false
+        boutonAvancer.style.display = 'none';
     }
 }
 
+
+reclamationInput.addEventListener("input", handleInputAndButtonState);
+
+boutonAvancer.addEventListener("click", function(event) {
+    event.preventDefault(); 
+    
+    let writtenValue = reclamationInput.value;
+    
+    if (isNbReclamationValidFinal(writtenValue)) {
+        window.location.href = this.href;
+    } else {
+        window.location.href = "refus-client.html";
+    }
+});
+
+reclamationInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        let writtenValue = this.value;
+        localStorage.setItem("nbReclamation", writtenValue);
+        
+        if (isNbReclamationValidFinal(writtenValue)) {
+            window.location.href = "demande-montant.html";
+        } else {
+            window.location.href = "refus-client.html";
+        }
+    }
+});
+
+handleInputAndButtonState();
