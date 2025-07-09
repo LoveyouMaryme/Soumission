@@ -10,6 +10,8 @@ function selectOption() {
 
   if (selectedValue && cameraIsValid) {
     window.location.href = "reclamation.html";
+  }else{
+    window.location.href = "refus-client.html";
   }
 }
 

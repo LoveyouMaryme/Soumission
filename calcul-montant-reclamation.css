@@ -27,6 +27,9 @@ body {
     background: var(--bg-gradient);
 }
 
+.form-and-button{
+    
+}
 
 /* ===== Price Section ===== */
 
@@ -49,7 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 90px;
     margin-left: 100px;
 }
 
@@ -69,14 +72,15 @@ h1 {
 .price{
     width: 40%;
     height: 100%;
-    border-color: #5c2b29;
-    border-style: dashed;
-    border-width: 2px;
     display: flex;
     flex-direction: column;
     gap: 30px; 
- 
     text-align: center;
+}
+
+#prix-annuel, #prix-mensuel {
+    font-size: 80px;
+    color: var(--text-dark);
 }
 
 
