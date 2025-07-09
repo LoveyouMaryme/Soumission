@@ -23,6 +23,11 @@ body {
     text-align: center;
 }
 
+h1 {
+    font-size: 50px;
+}
+
+
 
 
 .refus-container {
@@ -31,11 +36,14 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    width: 100%;
+
+
+
 }
 
 .click-button {
-   margin-top: 40px;
+    margin-top: 40px;
     border: none;
     padding: 20px 40px;
     border-radius: var(--border-radius);
@@ -43,10 +51,19 @@ body {
     color: white;
     transition-duration: 0.5s;
     cursor: pointer;
+    width: 60%;
+    font-size: 30px;
+
+
 }
 
 .click-button:hover {
     background-color: var(--accent-bg);
     color: var(--text-dark);
     box-shadow: var(--card-shadow);
+}
+
+.container-button {
+    display: flex;
+    gap: 40px;
 }
