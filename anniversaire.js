@@ -12,9 +12,9 @@ function selectOption() {
     let maleAgenderIsValid = isMaleAgenderValid(selectedValue)
 
     if (selectedValue && ageIsValid && (femaleIsValid || maleAgenderIsValid)) {
-        //window.location.href = "valeur-auto.html";
+        window.location.href = "valeur-auto.html";
     } else {
-        //window.location.href = "refus-client.html"
+        window.locatin.href = "refus-client.html"
     }
 }
 
