@@ -11,12 +11,12 @@ function isValueEntered(value) {
 
 function isKmValidFinal(value) {
     const numValue = parseFloat(value);
-    return !isNaN(numValue) && numValue >= 0 && numValue < 50000;
+    return !isNaN(numValue) && numValue >= 0 && numValue <= 50000;
 }
 
 function handleInputAndButtonState() {
     let writtenValue = kmAutoInput.value;
-    
+
     localStorage.setItem("kmAnnuel", writtenValue);
 
     if (isValueEntered(writtenValue)) {
@@ -29,11 +29,11 @@ function handleInputAndButtonState() {
 
 kmAutoInput.addEventListener("input", handleInputAndButtonState);
 
-boutonAvancer.addEventListener("click", function(event) {
-    event.preventDefault(); 
-    
+boutonAvancer.addEventListener("click", function (event) {
+    event.preventDefault();
+
     let writtenValue = kmAutoInput.value;
-    
+
     if (isKmValidFinal(writtenValue)) {
         window.location.href = this.href;
     } else {
@@ -41,11 +41,11 @@ boutonAvancer.addEventListener("click", function(event) {
     }
 });
 
-kmAutoInput.addEventListener("keydown", function(event) {
+kmAutoInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         let writtenValue = this.value;
         localStorage.setItem("kmAnnuel", writtenValue);
-        
+
         if (isKmValidFinal(writtenValue)) {
             window.location.href = "camera-recul.html";
         } else {
