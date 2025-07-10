@@ -12,15 +12,16 @@ function selectOption() {
     let maleAgenderIsValid = isMaleAgenderValid(selectedValue)
 
     if (selectedValue && ageIsValid && (femaleIsValid || maleAgenderIsValid)) {
-        window.location.href = "valeur-auto.html";
+        //window.location.href = "valeur-auto.html";
     } else {
-        window.location.href = "refus-client.html"
+        //window.location.href = "refus-client.html"
     }
 }
 
 function isAgeValid(value) {
     const hundredYearsLater = new Date(value);
     hundredYearsLater.setFullYear(hundredYearsLater.getFullYear() + 100);
+    hundredYearsLater.setDate(hundredYearsLater.getDate() + 1)
 
 
     if (today < hundredYearsLater) {
@@ -34,8 +35,12 @@ function isAgeValid(value) {
 function isFemaleValid(value) {
 
     if (gender === "Femme") {
-        const sixteenYearsLater = new Date(value);
+        const sixteenYearsLater = new Date(value)
         sixteenYearsLater.setFullYear(sixteenYearsLater.getFullYear() + 16);
+
+        //Have to add one more day because it starts at 0
+        sixteenYearsLater.setDate(sixteenYearsLater.getDate() + 1);
+
 
         if (today > sixteenYearsLater) {
             return true
@@ -51,6 +56,7 @@ function isMaleAgenderValid(value) {
     if (gender != "Femme") {
         const eighteenYearsLater = new Date(value);
         eighteenYearsLater.setFullYear(eighteenYearsLater.getFullYear() + 18);
+        eighteenYearsLater.setDate(eighteenYearsLater.getDate() + 1);
 
         if (today > eighteenYearsLater) {
             return true
