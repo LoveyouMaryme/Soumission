@@ -39,14 +39,14 @@ function addElement() {
 
 document.getElementById("submit-button").addEventListener("click", submitForm);
 
-function submitForm(event){
+function submitForm(event) {
 
-    event.preventDefault();
-    const form = document.getElementById("form");
+  event.preventDefault();
+  const form = document.getElementById("form");
 
   if (!form.checkValidity()) {
 
-    form.reportValidity(); 
+    form.reportValidity();
     return;
   }
 
@@ -63,7 +63,7 @@ function sumReclamation() {
 
   Array.from(inputs).forEach(input => {
     const value = parseFloat(input.value);
-    
+
     if (!isNaN(value)) {
       currentSum += value;
     }
@@ -72,7 +72,7 @@ function sumReclamation() {
   console.log("Total:", currentSum);
   localStorage.setItem("montantReclamation", currentSum)
   redirectionAfterSum()
-  
+
 }
 
 

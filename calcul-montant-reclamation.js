@@ -16,23 +16,26 @@ console.log(montantReclamation)
 
 
 
-function setGrpMontantBase(){
+function setGrpMontantBase() {
 
     let ageIsLessTwentyFive = isAgeLessTwentyFive(anniversaire);
     let ageIsMoreSeventyFive = isAgeMoreSeventyFive(anniversaire)
-    
+
     montantDeBase = 0;
 
-    if((gender === "Homme" || gender === "Autre")  && ageIsLessTwentyFive){
+    if ((gender === "Homme" || gender === "Autre") && ageIsLessTwentyFive) {
         console.log(" Categorie : Homme ou Autre et moins de 25 ans")
+        console.log("5")
         return montantDeBase = priceCar * 5 / 100
 
-    } else if(ageIsMoreSeventyFive){
+    } else if (ageIsMoreSeventyFive) {
         console.log("Categorie : Plus de 75 ans")
+        console.log("4")
         return montantDeBase = priceCar * 4 / 100
 
-    }else{
+    } else {
         console.log("Categorie : Plus de 25 ans")
+        console.log("1.5")
         return montantDeBase = priceCar * 1.5 / 100
     }
 }
@@ -40,6 +43,7 @@ function setGrpMontantBase(){
 function isAgeLessTwentyFive(value) {
     const twentyFiveYearsLater = new Date(value);
     twentyFiveYearsLater.setFullYear(twentyFiveYearsLater.getFullYear() + 25);
+    twentyFiveYearsLater.setDate(twentyFiveYearsLater.getDate() + 1)
 
     console.log(today)
     console.log(twentyFiveYearsLater)
@@ -57,6 +61,7 @@ function isAgeLessTwentyFive(value) {
 function isAgeMoreSeventyFive(value) {
     const seventyFiveYearsLater = new Date(value);
     seventyFiveYearsLater.setFullYear(seventyFiveYearsLater.getFullYear() + 25);
+    seventyFiveYearsLater.setDate(seventyFiveYearsLater.getDate() + 1)
 
     if (today < seventyFiveYearsLater) {
         return true
@@ -65,8 +70,8 @@ function isAgeMoreSeventyFive(value) {
     }
 }
 
-function isPenaltySet(value){
-    if (value > 25000){
+function isPenaltySet(value) {
+    if (value > 25000) {
         return true
     } else {
         return false
@@ -74,24 +79,24 @@ function isPenaltySet(value){
 }
 
 
-function calculerPrixAssuranceAnnuel(montant){
+function calculerPrixAssuranceAnnuel(montant) {
 
     let penaltyIsSet = isPenaltySet(montantReclamation)
-    
+
     let prixReclamation = 350 * nbReclamation
     let prixKmAnnuel = 0.02 * kmAnnuel
 
-    let montantAssuranceAnnuelle = 
-        montantDeBase * 
+    let montantAssuranceAnnuelle =
+        montantDeBase +
         (prixReclamation) +
-        (prixKmAnnuel) 
+        (prixKmAnnuel)
 
-    if(penaltyIsSet){
+    if (penaltyIsSet) {
         montantAssuranceAnnuelle += 700
     }
 
     console.log("Montant de base: " + montantDeBase)
-    console.log("Prix de la reclamation: " + prixReclamation)  
+    console.log("Prix de la reclamation: " + prixReclamation)
     console.log("Prix du km annuel: " + prixKmAnnuel)
     console.log(penaltyIsSet ? "Pénalité appliquée" : "Aucune pénalité appliquée")
     console.log("Montant de l'assurance annuelle: " + montantAssuranceAnnuelle)
@@ -101,29 +106,27 @@ function calculerPrixAssuranceAnnuel(montant){
 
 }
 
-function calculerPrixAssuranceMensuel(montant){
+function calculerPrixAssuranceMensuel(montant) {
 
     let penaltyIsSet = isPenaltySet(montantReclamation)
 
+    let montantAssuranceAnnuelle =
+        montant + (350 * nbReclamation) + (0.02 * kmAnnuel)
 
-
-    let montantAssuranceAnnuelle = 
-        montant * (350 * nbReclamation) + (0.02 * kmAnnuel ) 
-
-    if(penaltyIsSet){
+    if (penaltyIsSet) {
         montantAssuranceAnnuelle += 700
     }
 
-    let montantMensuel = montantAssuranceAnnuelle / 12
+    let montantMensuel = Number(montantAssuranceAnnuelle / 12).toFixed(2)
     return montantMensuel
 
 }
 
 
 const text_prix_annuel = document.getElementById('prix-annuel');
-text_prix_annuel.innerHTML = calculerPrixAssuranceAnnuel(setGrpMontantBase()) ;
+text_prix_annuel.innerHTML = calculerPrixAssuranceAnnuel(setGrpMontantBase());
 
 
 const text_prix_mensuel = document.getElementById('prix-mensuel');
-text_prix_mensuel.innerHTML = calculerPrixAssuranceMensuel(setGrpMontantBase()) ;
+text_prix_mensuel.innerHTML = calculerPrixAssuranceMensuel(setGrpMontantBase());
 
