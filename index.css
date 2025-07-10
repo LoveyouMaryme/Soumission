@@ -50,7 +50,7 @@ div.border-soumission>div {
     font-weight: 600;
 }
 
-div.border-header>div:hover {
+div.border-header>.border-on:hover {
     background-color: #FFFFFF;
 }
 
