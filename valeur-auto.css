@@ -28,16 +28,16 @@ body {
 
 /* ===== Form ===== */
 
-.reculer{
+.reculer {
     width: auto;
     height: 10%;
     position: absolute;
-    left: 20%;    
+    left: 20%;
     top: 45%;
     cursor: pointer;
 }
 
-.reculer:hover{
+.reculer:hover {
     content: url(ressources/icons/arrow-left-white.png);
     width: auto;
     height: 10%;
@@ -120,6 +120,11 @@ body {
     flex-grow: 1;
     width: 100%;
     cursor: text;
+}
+
+#valeur-auto-selection::placeholder {
+    font-size: 25px;
+    text-align: center;
 }
 
 .devise {

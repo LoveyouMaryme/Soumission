@@ -30,26 +30,24 @@ body {
 
 
 
-
-
-
 /* ===== Form ===== */
 
-.reculer{
+.reculer {
     width: auto;
     height: 10%;
     position: absolute;
-    left: 20%;   
+    left: 20%;
     top: 45%;
     cursor: pointer;
 }
 
-.reculer:hover{
+.reculer:hover {
     content: url(ressources/icons/arrow-left-white.png);
     width: auto;
     height: 10%;
 
 }
+
 .form-container {
     display: flex;
     width: 100%;
@@ -87,6 +85,7 @@ body {
     width: 80%;
     max-width: 400px;
 }
+
 .selection-container:after {
     content: "";
     position: absolute;
@@ -104,8 +103,7 @@ body {
 
 
 
-
-    select {
+select {
     font-size: 30px;
     font-weight: 300;
     text-align: center;
@@ -120,4 +118,3 @@ body {
     width: 100%;
     cursor: pointer;
 }
-

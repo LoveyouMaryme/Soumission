@@ -31,7 +31,7 @@ body {
     background-color: var(--main-bg);
     width: 100%;
     height: 5%;
-   
+
 }
 
 .border-soumission {
@@ -57,11 +57,9 @@ div.border-header>div:hover {
 #boutton-soumission {
     border-radius: var(--border-radius);
     background-color: var(--accent-bg);
-    margin: 10px 25px 10px 0px;
     padding: 5px 20px;
     width: auto;
     font-weight: bold;
-  
 }
 
 #boutton-soumission:hover {
@@ -70,10 +68,18 @@ div.border-header>div:hover {
     color: white;
 }
 
-a, #boutton-soumission {
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a,
+#boutton-soumission {
     text-decoration: none;
     color: var(--text-dark);
 }
+
 
 /* ===== Hero Section ===== */
 section {
@@ -202,7 +208,7 @@ img+div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 
     gap: 100px;
     width: 100%;
