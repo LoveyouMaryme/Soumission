@@ -28,16 +28,16 @@ body {
 
 /* ===== Form ===== */
 
-.reculer{
+.reculer {
     width: auto;
     height: 10%;
     position: absolute;
-    left: 20%;    
+    left: 20%;
     top: 45%;
     cursor: pointer;
 }
 
-.reculer:hover{
+.reculer:hover {
     content: url(ressources/icons/arrow-left-white.png);
     width: auto;
     height: 10%;
@@ -90,8 +90,8 @@ body {
     cursor: pointer;
     background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235c2b29"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 10px center; 
-    background-size: 24px; 
+    background-position: right 10px center;
+    background-size: 24px;
 }
 
 .selection-container {

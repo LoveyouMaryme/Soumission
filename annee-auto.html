@@ -1,8 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta lang="fr">
+
     <title>Année de l'automobile</title>
     <link rel="stylesheet" href="annee-auto.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +14,12 @@
 
 <body>
     <div class="form-container">
-         <a href="valeur-auto.html"><img  class="reculer" src="ressources/icons/arrow-right-rose.png" alt="Reculer"></a>
+        <a href="valeur-auto.html"><img class="reculer" src="ressources/icons/arrow-right-rose.png" alt="Reculer"></a>
         <div class="form">
-            <label class="question" for="annee-auto">Quel est l'année de l'auto?</label>
+            <label class="question" for="annee-auto-selection">Quel est l'année de l'auto?</label>
             <div class="selection-container">
-                <select type="number" id="annee-auto-selection" name="annee-auto" required>
-                    <option value="Sélectionner l'année"></option>
+                <select id="annee-auto-selection" name="annee-auto" required>
+                    <option class="placeholder-value" value="" disabled selected hidden>Choisis l'année</option>
                 </select>
             </div>
         </div>
