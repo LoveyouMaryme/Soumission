@@ -4,7 +4,7 @@ const anniversaire = localStorage.getItem("anniversaire")
 const nbReclamation = localStorage.getItem("nbReclamation")
 const kmAnnuel = localStorage.getItem("kmAnnuel")
 const montantReclamation = localStorage.getItem("montantReclamation")
-const today = Date()
+const today = new Date()
 
 console.log(gender)
 console.log(priceCar)
