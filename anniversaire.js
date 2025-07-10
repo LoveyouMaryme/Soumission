@@ -14,7 +14,7 @@ function selectOption() {
     if (selectedValue && ageIsValid && (femaleIsValid || maleAgenderIsValid)) {
         window.location.href = "valeur-auto.html";
     } else {
-        window.locatin.href = "refus-client.html"
+        window.location.href = "refus-client.html";
     }
 }
 
