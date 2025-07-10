@@ -14,11 +14,11 @@
 }
 
 
-
 /* ===== Reset & Base Styles ===== */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -29,40 +29,36 @@ body {
 
 
 
-
-
-
-
-/* ===== Form ===== */
-
-.reculer{
+.reculer {
     width: auto;
     height: 10%;
     position: absolute;
-    left: 20%;   
+    left: 20%;
     top: 45%;
     cursor: pointer;
 }
 
-.reculer:hover{
+.reculer:hover {
     content: url(ressources/icons/arrow-left-white.png);
     width: auto;
     height: 10%;
-
 }
+
+
+
 .form-container {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     position: relative;
-
 }
 
+
+
 .form {
-    width: 50%;
-    height: 40%;
+    width: 40%;
     background-color: var(--form-color);
     border-radius: 30px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05);
@@ -71,20 +67,28 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    margin-left: 100px;
-    position: relative;
+    padding: 40px 20px;
 }
 
 
-
+/* ===== Question ===== */
 .question {
     font-size: 40px;
     font-weight: 600;
+    text-align: center;
 }
 
 
-#birthday-selection{
-        font-size: 30px;
+
+.selection-container {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+#birthday-selection {
+    font-size: 30px;
     font-weight: 300;
     text-align: center;
     border-radius: 20px;
@@ -97,9 +101,4 @@ body {
     background-color: var(--form-color);
     width: 100%;
     cursor: pointer;
-
 }
-
-
-
-
