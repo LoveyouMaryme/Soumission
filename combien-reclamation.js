@@ -11,12 +11,12 @@ function isValueEntered(value) {
 
 function isNbReclamationValidFinal(value) {
     const numValue = parseFloat(value);
-    return !isNaN(numValue) && numValue >= 0 && numValue < 4;
+    return !isNaN(numValue) && numValue >= 0 && numValue <= 4;
 }
 
 function handleInputAndButtonState() {
     let writtenValue = reclamationInput.value;
-    
+
     localStorage.setItem("nbReclamation", writtenValue);
 
     if (isValueEntered(writtenValue)) {
@@ -29,11 +29,11 @@ function handleInputAndButtonState() {
 
 reclamationInput.addEventListener("input", handleInputAndButtonState);
 
-boutonAvancer.addEventListener("click", function(event) {
-    event.preventDefault(); 
-    
+boutonAvancer.addEventListener("click", function (event) {
+    event.preventDefault();
+
     let writtenValue = reclamationInput.value;
-    
+
     if (isNbReclamationValidFinal(writtenValue)) {
         window.location.href = this.href;
     } else {
@@ -41,11 +41,11 @@ boutonAvancer.addEventListener("click", function(event) {
     }
 });
 
-reclamationInput.addEventListener("keydown", function(event) {
+reclamationInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         let writtenValue = this.value;
         localStorage.setItem("nbReclamation", writtenValue);
-        
+
         if (isNbReclamationValidFinal(writtenValue)) {
             window.location.href = "demande-montant.html";
         } else {
