@@ -1,8 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta lang="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Montants des précédentes réclamations</title>
     <link rel="stylesheet" href="demande-montant.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,23 +13,18 @@
 </head>
 
 <body>
-   
     <div class="form-container" id="form-space">
-
-        <a href="combien-reclamation.html"><img  class="reculer" src="ressources/icons/arrow-right-rose.png" alt="Reculer"></a>
+        <a href="combien-reclamation.html"><img class="reculer" src="ressources/icons/arrow-right-rose.png" alt="Reculer"></a>
         <form class="form" id="form">
-            <label class="question" id="question-1" for="combien-reclamation"> Pour la réclamation #1, quel montant avez-vous réclamé?</label>
+            <label class="question" id="question-1" for="reclamation-1"> Pour la réclamation #1, quel montant avez-vous réclamé?</label>
             <div class="selection-container" id="select-1">
                 <input class="all-reclamations" type="number" id="reclamation-1" name="combien-reclamation" required>
             </div>
             <button type="submit" class="ok-button" id="submit-button">
-            <img src="ressources/icons/ok.png" alt="submit form">
-        </button>
+                <img src="ressources/icons/ok.png" alt="submit form">
+            </button>
         </form>
-        
-        
     </div>
-    
     <script src="demande-montant.js" defer></script>
 </body>
 

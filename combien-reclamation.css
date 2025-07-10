@@ -13,10 +13,15 @@
     --bg-gradient: linear-gradient(135deg, #FFFDE6 0%, #FFE7E6 100%);
 }
 
-
-
 /* ===== Reset & Base Styles ===== */
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -25,25 +30,27 @@ body {
     font-family: "Shantell Sans", cursive;
     color: var(--text-dark);
     background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 /* ===== Form ===== */
 
-.reculer{
+.reculer {
     width: auto;
     height: 10%;
     position: absolute;
-    left: 20%;   
+    left: 10%;
     top: 45%;
     cursor: pointer;
+    transform: translateY(-50%);
 }
 
-.reculer:hover{
+.reculer:hover {
     content: url(ressources/icons/arrow-left-white.png);
     width: auto;
     height: 10%;
-
 }
 
 #bouton-avancer {
@@ -54,9 +61,10 @@ body {
     width: auto;
     height: 10%;
     position: absolute;
-    left: 80%;
+    right: 10%;
     top: 45%;
     cursor: pointer;
+    transform: translateY(-50%);
 }
 
 .avancer:hover {
@@ -72,7 +80,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-
+    flex-direction: column;
 }
 
 .form {
@@ -86,11 +94,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    margin-left: 100px;
     position: relative;
 }
-
-
 
 .question {
     font-size: 40px;
@@ -98,8 +103,7 @@ body {
     text-align: center;
 }
 
-
-#combien-reclamation-selection{
+#combien-reclamation-selection {
     font-size: 30px;
     font-weight: 300;
     text-align: center;
@@ -113,9 +117,5 @@ body {
     background-color: var(--form-color);
     width: 100%;
     cursor: pointer;
-
+    box-sizing: border-box;
 }
-
-
-
-

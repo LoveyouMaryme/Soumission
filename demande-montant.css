@@ -13,10 +13,15 @@
     --bg-gradient: linear-gradient(135deg, #FFFDE6 0%, #FFE7E6 100%);
 }
 
-
-
 /* ===== Reset & Base Styles ===== */
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -25,28 +30,29 @@ body {
     font-family: "Shantell Sans", cursive;
     color: var(--text-dark);
     background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-
-
-
-
-
 
 /* ===== Form ===== */
 
-.reculer{
+.reculer {
     width: auto;
     height: 10%;
+    position: absolute;
+    left: 10%;
+    top: 45%;
     cursor: pointer;
+    transform: translateY(-50%);
 }
 
-.reculer:hover{
+.reculer:hover {
     content: url(ressources/icons/arrow-left-white.png);
     width: auto;
     height: 10%;
-
 }
+
 .form-container {
     display: flex;
     width: 100%;
@@ -54,7 +60,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 50px;
-
 }
 
 .form {
@@ -68,11 +73,9 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    position:relative;
+    position: relative;
     padding: 30px 40px;
 }
-
-
 
 .question {
     font-size: 40px;
@@ -80,8 +83,7 @@ body {
     text-align: center;
 }
 
-
-.all-reclamations{
+.all-reclamations {
     font-size: 30px;
     font-weight: 300;
     text-align: center;
@@ -95,33 +97,26 @@ body {
     background-color: var(--form-color);
     width: 100%;
     cursor: pointer;
-
 }
 
 /* ===== okay button ===== */
 
 .ok-button {
-     position: absolute;
-  right: -150px; /* Ajuste pour qu’il sorte du formulaire */
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
+    position: absolute;
+    right: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .ok-button img {
-  width: 100px;
-  transition: transform 0.2s ease;
+    width: 100px;
+    transition: transform 0.2s ease;
 }
 
 .ok-button:hover img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
-
-

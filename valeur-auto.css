@@ -20,10 +20,19 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Shantell Sans", cursive;
     color: var(--text-dark);
     background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ===== Form ===== */
@@ -32,9 +41,10 @@ body {
     width: auto;
     height: 10%;
     position: absolute;
-    left: 20%;
+    left: 10%;
     top: 45%;
     cursor: pointer;
+    transform: translateY(-50%);
 }
 
 .reculer:hover {
@@ -51,9 +61,10 @@ body {
     width: auto;
     height: 10%;
     position: absolute;
-    left: 80%;
+    right: 10%;
     top: 45%;
     cursor: pointer;
+    transform: translateY(-50%);
 }
 
 .avancer:hover {
@@ -69,6 +80,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-direction: column;
 }
 
 .form {
@@ -81,7 +93,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    margin-left: 100px;
     padding: 40px;
     box-sizing: border-box;
     min-height: 40%;
@@ -133,7 +144,6 @@ body {
     color: var(--text-dark);
 }
 
-/*Enlève les boutons d'incrémentation par défaut du browser*/
 #valeur-auto-selection::-webkit-outer-spin-button,
 #valeur-auto-selection::-webkit-inner-spin-button {
     -webkit-appearance: none;
