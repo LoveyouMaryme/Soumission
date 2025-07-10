@@ -2,6 +2,7 @@
 document.getElementById("birthday-selection").addEventListener("change", selectOption)
 
 const today = new Date();
+today.setHours(0, 0, 0, 0)
 const gender = localStorage.getItem("gender");
 
 function selectOption() {
@@ -22,6 +23,7 @@ function isAgeValid(value) {
     const hundredYearsLater = new Date(value);
     hundredYearsLater.setFullYear(hundredYearsLater.getFullYear() + 100);
     hundredYearsLater.setDate(hundredYearsLater.getDate() + 1)
+    hundredYearsLater.setHours(0, 0, 0, 0)
 
 
     if (today < hundredYearsLater) {
@@ -40,6 +42,7 @@ function isFemaleValid(value) {
 
         //Have to add one more day because it starts at 0
         sixteenYearsLater.setDate(sixteenYearsLater.getDate() + 1);
+        sixteenYearsLater.setHours(0, 0, 0, 0)
 
 
         if (today > sixteenYearsLater) {
@@ -57,6 +60,7 @@ function isMaleAgenderValid(value) {
         const eighteenYearsLater = new Date(value);
         eighteenYearsLater.setFullYear(eighteenYearsLater.getFullYear() + 18);
         eighteenYearsLater.setDate(eighteenYearsLater.getDate() + 1);
+        eighteenYearsLater.setHours(0, 0, 0, 0)
 
         if (today > eighteenYearsLater) {
             return true

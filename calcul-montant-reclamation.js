@@ -5,6 +5,7 @@ const nbReclamation = localStorage.getItem("nbReclamation")
 const kmAnnuel = localStorage.getItem("kmAnnuel")
 const montantReclamation = localStorage.getItem("montantReclamation")
 const today = new Date()
+today.setHours(0, 0, 0, 0);
 
 console.log(gender)
 console.log(priceCar)
@@ -40,16 +41,21 @@ function setGrpMontantBase() {
     }
 }
 
+
+
 function isAgeLessTwentyFive(value) {
-    const twentyFiveYearsLater = new Date(value);
+    let twentyFiveYearsLater = new Date(value);
     twentyFiveYearsLater.setFullYear(twentyFiveYearsLater.getFullYear() + 25);
     twentyFiveYearsLater.setDate(twentyFiveYearsLater.getDate() + 1)
+    twentyFiveYearsLater.setHours(0, 0, 0, 0);
+
+
 
     console.log(today)
     console.log(twentyFiveYearsLater)
 
 
-    if (today < twentyFiveYearsLater) {
+    if (today <= twentyFiveYearsLater) {
         console.log("Age is less than 25")
         return true
     } else {
@@ -60,10 +66,14 @@ function isAgeLessTwentyFive(value) {
 
 function isAgeMoreSeventyFive(value) {
     const seventyFiveYearsLater = new Date(value);
-    seventyFiveYearsLater.setFullYear(seventyFiveYearsLater.getFullYear() + 25);
+    seventyFiveYearsLater.setFullYear(seventyFiveYearsLater.getFullYear() + 75);
     seventyFiveYearsLater.setDate(seventyFiveYearsLater.getDate() + 1)
+    seventyFiveYearsLater.setHours(0, 0, 0, 0)
 
-    if (today < seventyFiveYearsLater) {
+
+    console.log(today)
+    console.log(seventyFiveYearsLater)
+    if (today >= seventyFiveYearsLater) {
         return true
     } else {
         return false
@@ -79,7 +89,7 @@ function isPenaltySet(value) {
 }
 
 
-function calculerPrixAssuranceAnnuel(montant) {
+function calculerPrixAssuranceAnnuel() {
 
     let penaltyIsSet = isPenaltySet(montantReclamation)
 
@@ -121,6 +131,8 @@ function calculerPrixAssuranceMensuel(montant) {
     return montantMensuel
 
 }
+
+
 
 
 const text_prix_annuel = document.getElementById('prix-annuel');
